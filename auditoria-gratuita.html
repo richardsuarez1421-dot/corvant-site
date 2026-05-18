@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="icon" type="image/png" sizes="64x64" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="shortcut icon" type="image/png" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="apple-touch-icon" href="/Marca_Corvant-15.png.png?v=10">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría gratuita — Corvant Data Protection</title>
+<meta name="description" content="Auditoría inicial sin costo para clínicas, laboratorios y centros médicos en Ecuador. Diagnóstico claro frente a la LOPDP. Vigente hasta el 26 de julio de 2026.">
+<link rel="stylesheet" href="styles.css">
+<style>
+
+/* Wordmark logo en nav y footer (sobreescribe estilos base) */
+nav.site-nav .nav-brand img.wordmark { width: auto; height: 28px; }
+nav.site-nav .nav-brand .brand-text { display: none; }
+.footer-brand img.wordmark { height: 36px; width: auto; }
+
+.audit-hero {
+  background: var(--warm-black);
+  color: var(--cream);
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+.audit-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('images/network_nodes.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  filter: grayscale(0.4);
+}
+.audit-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(31, 24, 18, 0.92) 0%, rgba(31, 24, 18, 0.85) 100%);
+}
+.audit-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.audit-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.audit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem;
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.audit-hero h1 {
+  font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+  line-height: 1.0;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+}
+.audit-hero h1 em { color: var(--orange); font-style: italic; }
+.audit-hero .lead {
+  font-size: 1.15rem;
+  color: rgba(252, 250, 246, 0.78);
+  margin-bottom: 2rem;
+  line-height: 1.55;
+  max-width: 540px;
+}
+.audit-hero .lead strong { color: var(--cream); }
+
+.audit-meta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(252, 250, 246, 0.15);
+}
+.audit-meta-item {
+  font-size: 0.85rem;
+  color: rgba(252, 250, 246, 0.55);
+}
+.audit-meta-item strong {
+  display: block;
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+.audit-meta-item span {
+  color: var(--cream);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  display: block; font-weight: 500;
+}
+
+/* Countdown */
+.countdown {
+  background: rgba(252, 250, 246, 0.05);
+  border: 1px solid rgba(252, 250, 246, 0.15);
+  border-radius: var(--radius);
+  padding: 2.25rem;
+  backdrop-filter: blur(10px);
+}
+.countdown-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.countdown-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  line-height: 1.2; }
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.countdown-cell {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  background: rgba(252, 250, 246, 0.05);
+  border-radius: 4px;
+}
+.countdown-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--orange);
+  line-height: 1; }
+.countdown-unit {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(252, 250, 246, 0.55);
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+.countdown-deadline {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: rgba(252, 250, 246, 0.6);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+/* What we do */
+.what-we-do {
+  background: var(--ink);
+  padding: var(--section-y) 0;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 3rem;
+  border: 1px solid rgba(252,250,246,0.12);
+  border: 1px solid rgba(252,250,246,0.12);
+}
+.step-cell {
+  padding: 2.5rem 1.75rem;
+  border: 1px solid rgba(252,250,246,0.12);
+}
+.step-cell:last-child { border-right: none; }
+.step-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 1.25rem; }
+.step-cell h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  color: var(--cream); }
+.step-cell p {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(252,250,246,0.75);
+}
+.step-time {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--orange-deep);
+  margin-top: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Form section */
+.form-section {
+  background: var(--ink);
+  padding: var(--section-y) 0;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+.form-info h2 { margin-bottom: 1.5rem; }
+.form-info p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(252,250,246,0.75);
+  margin-bottom: 1.25rem;
+}
+.form-info ul {
+  list-style: none;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border: 1px solid rgba(252,250,246,0.12);
+}
+.form-info ul li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  color: rgba(252,250,246,0.75);
+}
+.form-info ul li::before {
+  content: "→";
+  color: var(--orange);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.form-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(252,250,246,0.12);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+.form-card h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: var(--cream); font-weight: 500;
+}
+.form-card .form-sub {
+  font-size: 0.92rem;
+  color: rgba(252,250,246,0.75);
+  margin-bottom: 2rem;
+}
+.form-card .btn-primary { width: 100%; padding: 1.05rem; font-size: 1rem; }
+
+.form-disclaimer {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* Conditions */
+.conditions-section {
+  background: var(--ink);
+  padding: var(--section-y) 0;
+}
+.conditions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.condition-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(252,250,246,0.12);
+  border-radius: var(--radius);
+  padding: 2rem 2rem;
+}
+.condition-card h4 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  color: var(--cream); }
+.condition-card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(252,250,246,0.75);
+}
+
+/* Mini FAQ */
+.audit-faq {
+  background: var(--ink);
+  padding: var(--section-y) 0;
+}
+
+@media (max-width: 968px) {
+  .audit-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .audit-meta { grid-template-columns: 1fr; gap: 1.25rem; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .step-cell { border: 1px solid rgba(252,250,246,0.12); }
+  .step-cell:last-child { border-bottom: none; }
+  .form-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .conditions-grid { grid-template-columns: 1fr; }
+  .countdown-grid { grid-template-columns: repeat(4, 1fr); }
+  .countdown-num { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo-wordmark-white.png" alt="Corvant Data Protection" class="wordmark">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <span class="btn-magnetic">
+      <a href="auditoria-gratuita.html" class="btn btn-primary nav-cta active">
+      Auditoría gratuita
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    </span>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="audit-hero">
+  <div class="container audit-hero-inner">
+    <div class="audit-hero-grid">
+      <div>
+        <span class="audit-pill">
+          <span style="width: 6px; height: 6px; background: rgba(255,255,255,0.05); border-radius: 50%;"></span>
+          Promoción vigente
+        </span>
+        <h1>
+          La auditoría inicial<br>
+          <em>es gratuita.</em>
+        </h1>
+        <p class="lead">
+          Hasta el 26 de julio de 2026, evaluamos tu organización <strong>sin costo</strong> y te entregamos un diagnóstico claro de dónde estás frente a la LOPDP. Sin compromiso de contratación.
+        </p>
+
+        <div class="audit-meta">
+          <div class="audit-meta-item">
+            <strong>Duración</strong>
+            <span>1 a 2 reuniones</span>
+          </div>
+          <div class="audit-meta-item">
+            <strong>Modalidad</strong>
+            <span>Presencial o virtual</span>
+          </div>
+          <div class="audit-meta-item">
+            <strong>Costo</strong>
+            <span>$0</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="countdown">
+        <div class="countdown-label">/ Fin de la promoción</div>
+        <h3 class="countdown-title">Auditoría gratuita disponible hasta el 26 de julio de 2026.</h3>
+        <div class="countdown-grid" id="countdown">
+          <div class="countdown-cell">
+            <div class="countdown-num" id="cd-days">—</div>
+            <div class="countdown-unit">Días</div>
+          </div>
+          <div class="countdown-cell">
+            <div class="countdown-num" id="cd-hours">—</div>
+            <div class="countdown-unit">Horas</div>
+          </div>
+          <div class="countdown-cell">
+            <div class="countdown-num" id="cd-min">—</div>
+            <div class="countdown-unit">Min</div>
+          </div>
+          <div class="countdown-cell">
+            <div class="countdown-num" id="cd-sec">—</div>
+            <div class="countdown-unit">Seg</div>
+          </div>
+        </div>
+        <div class="countdown-deadline">VIGENTE HASTA EL 26 DE JULIO DE 2026</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUÉ HACEMOS EN LA AUDITORÍA ============ -->
+<section class="what-we-do">
+  <div class="container">
+    <div class="section-header with-aside reveal">
+      <div>
+        <div class="eyebrow">Qué hacemos</div>
+        <h2 class="h-1" style="margin-top: 1rem;">
+          La auditoría incluye <em>cuatro pasos</em> concretos.
+        </h2>
+      </div>
+      <p class="lead">
+        Es la misma metodología que aplicamos en una implementación pagada — solo que en su fase inicial. Si decides continuar con un programa, accedes al precio promocional.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-cell">
+        <div class="step-num">01</div>
+        <h3>Reunión de entendimiento</h3>
+        <p>Conocemos tu organización: sector, tamaño, áreas, sistemas y estado actual frente a la LOPDP. Definimos juntos el alcance del diagnóstico.</p>
+        <div class="step-time">1 a 2 días</div>
+      </div>
+      <div class="step-cell">
+        <div class="step-num">02</div>
+        <h3>Levantamiento de información</h3>
+        <p>Revisamos documentos, políticas existentes, flujos de datos, accesos, contratos y canales digitales. Identificamos puntos críticos en tu operación.</p>
+        <div class="step-time">3 a 7 días</div>
+      </div>
+      <div class="step-cell">
+        <div class="step-num">03</div>
+        <h3>Diagnóstico inicial</h3>
+        <p>Entregamos un informe ejecutivo con hallazgos legales, técnicos y organizacionales. Riesgos identificados, acciones prioritarias y plan recomendado.</p>
+        <div class="step-time">2 a 4 días</div>
+      </div>
+      <div class="step-cell">
+        <div class="step-num">04</div>
+        <h3>Recomendación</h3>
+        <p>Te recomendamos el plan adecuado para tu organización (Esencial, Integral o DPO Externo) y, si decides avanzar, accedes al precio promocional.</p>
+        <div class="step-time">Sin compromiso</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMULARIO ============ -->
+<section class="form-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Solicitud</div>
+      <h2 class="h-1" style="margin-top: 1rem;">Empieza por aquí.</h2>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-info">
+        <h2 class="h-3 font-serif">Cuéntanos sobre tu organización.</h2>
+        <p>
+          Completa el formulario y te contactamos en máximo 24 horas hábiles para coordinar la primera reunión. Si prefieres una vía más directa, escríbenos por WhatsApp o correo.
+        </p>
+
+        <ul>
+          <li>Respuesta en 24 horas hábiles</li>
+          <li>Reunión coordinada según tu disponibilidad</li>
+          <li>Toda la información tratada bajo confidencialidad</li>
+          <li>Sin compromiso de contratación posterior</li>
+        </ul>
+
+        <div style="margin-top: 2.5rem; padding-top: 2rem; border: 1px solid rgba(252,250,246,0.12);">
+          <div class="eyebrow" style="margin-bottom: 1rem;">Otras vías de contacto</div>
+          <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+            <strong>WhatsApp:</strong> <a href="https://wa.me/593978675210" style="color: var(--orange-deep); text-decoration: underline;">+593 978 675 210</a>
+          </p>
+          <p style="font-size: 0.95rem;">
+            <strong>Email:</strong> <a href="mailto:ventas@corvantdata.com" style="color: var(--orange-deep); text-decoration: underline;">ventas@corvantdata.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3>Solicita tu auditoría gratuita</h3>
+        <p class="form-sub">Te contactamos en menos de 24 horas hábiles.</p>
+
+<form action="https://api.web3forms.com/submit" method="POST">
+
+  <input type="hidden" name="access_key" value="9ee3bc28-0982-4c87-900f-4f5168f48602">
+  <input type="hidden" name="subject" value="Nueva solicitud de auditoría gratuita - Corvant">
+  <input type="hidden" name="redirect" value="https://www.corvantdata.com/gracias.html">
+
+  <div class="form-grid-2">
+    <div class="form-row">
+      <label>Nombre completo *</label>
+      <input type="text" name="nombre" required>
+    </div>
+    <div class="form-row">
+      <label>Cargo *</label>
+      <input type="text" name="cargo" placeholder="Gerente, Director Médico, etc." required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Nombre de tu organización *</label>
+    <input type="text" name="organizacion" required>
+  </div>
+
+  <div class="form-grid-2">
+    <div class="form-row">
+      <label>Tipo de organización *</label>
+      <select name="tipo_organizacion" required>
+        <option value="">Selecciona…</option>
+        <option>Clínica</option>
+        <option>Laboratorio clínico</option>
+        <option>Centro médico</option>
+        <option>Centro de especialidades</option>
+        <option>Consultorio</option>
+        <option>Otra</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Tamaño aproximado *</label>
+      <select name="tamano_aproximado" required>
+        <option value="">Selecciona…</option>
+        <option>1 – 5 empleados</option>
+        <option>6 – 15 empleados</option>
+        <option>16 – 30 empleados</option>
+        <option>31 – 50 empleados</option>
+        <option>50+ empleados</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-grid-2">
+    <div class="form-row">
+      <label>Email *</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="form-row">
+      <label>Teléfono / WhatsApp *</label>
+      <input type="tel" name="telefono" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>¿Algo que debamos saber?</label>
+    <textarea name="mensaje" placeholder="Por ejemplo: ya tenemos algunas políticas, recibimos una notificación de la SPDP, somos parte de un grupo médico, etc."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    Enviar solicitud
+  </button>
+
+</form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONDICIONES ============ -->
+<section class="conditions-section">
+  <div class="container">
+    <div class="section-header with-aside reveal">
+      <div>
+        <div class="eyebrow">Condiciones</div>
+        <h2 class="h-1" style="margin-top: 1rem;">Lo que <em>debes saber</em> antes de solicitar.</h2>
+      </div>
+      <p class="lead">
+        La auditoría inicial es real y sin trampas. Aquí lo claro.
+      </p>
+    </div>
+
+    <div class="conditions-grid">
+      <div class="condition-card">
+        <h4>Sin costo, sin compromiso</h4>
+        <p>La auditoría inicial es gratuita y no implica obligación de contratar ningún plan posterior. Si tras el diagnóstico decides no avanzar, no hay penalidad.</p>
+      </div>
+      <div class="condition-card">
+        <h4>Vigente hasta el 26 de julio de 2026</h4>
+        <p>La promoción aplica para solicitudes recibidas hasta esa fecha. Pasada la promoción, la auditoría inicial se cobra como servicio independiente.</p>
+      </div>
+      <div class="condition-card">
+        <h4>Aplicable al sector salud y PYMES</h4>
+        <p>El diagnóstico está diseñado para clínicas, laboratorios, centros médicos, consultorios y PYMES de hasta 50 empleados. Para otros casos, evaluamos por separado.</p>
+      </div>
+      <div class="condition-card">
+        <h4>Información bajo confidencialidad</h4>
+        <p>Toda la información compartida durante la auditoría se trata bajo estricta confidencialidad. Firmamos NDA si tu organización lo requiere.</p>
+      </div>
+      <div class="condition-card">
+        <h4>Diagnóstico real, no comercial</h4>
+        <p>El informe entrega un diagnóstico honesto, no un argumento de venta. Si tu organización ya cumple, te lo decimos. Si necesita poco, te lo decimos también.</p>
+      </div>
+      <div class="condition-card">
+        <h4>Precio promocional al continuar</h4>
+        <p>Si decides contratar el Programa Esencial o Integral después de la auditoría, accedes al precio promocional reducido durante la vigencia de la promoción.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="audit-faq">
+  <div class="container">
+    <div class="section-header with-aside reveal">
+      <div>
+        <div class="eyebrow">Preguntas frecuentes</div>
+        <h2 class="h-1" style="margin-top: 1rem;">Antes de solicitar.</h2>
+      </div>
+      <p class="lead">Las preguntas más recurrentes sobre la auditoría gratuita.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          ¿Realmente es gratuita?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          Sí. La auditoría inicial no tiene costo. Es nuestra forma de conocer tu organización antes de proponerte un plan. Si decides no contratar nada después, tampoco hay obligación.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          ¿Cuánto tiempo tarda completar la auditoría?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          Entre 1 y 2 semanas en total, dependiendo de la rapidez con la que tu organización entregue la información solicitada. La primera reunión la coordinamos en 24–48 horas tras tu solicitud.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          ¿Qué nos van a entregar?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          Un informe ejecutivo con: hallazgos legales (qué falta para cumplir la LOPDP), hallazgos técnicos (qué riesgos hay en accesos, sistemas, canales), hallazgos organizacionales (qué procesos requieren ajustes) y un plan recomendado con tiempos y costos.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          ¿Tenemos que tener algo preparado de antemano?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          No es necesario. En la primera reunión te indicamos exactamente qué información necesitamos recopilar. Si ya tienes documentos (políticas, avisos, contratos), nos ayudan a acelerar el diagnóstico.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          ¿Puede ser virtual?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a">
+          Sí. La auditoría se puede realizar 100% virtual, presencial en Quito, o en formato híbrido. Lo coordinamos según tu disponibilidad y la naturaleza de tu organización.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand">
+      <img src="images/logo-wordmark-white.png" alt="Corvant Data Protection" class="wordmark">
+    </a>
+        <p>Implementación real de la LOPDP para clínicas, laboratorios y centros médicos en Ecuador. No documentos: protección.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios-programa-esencial.html">Programa Esencial LOPDP</a></li>
+          <li><a href="servicios-programa-integral-salud.html">Programa Integral Salud</a></li>
+          <li><a href="servicios-dpo-externo.html">DPO Externo Corvant</a></li>
+          <li><a href="auditoria-gratuita.html">Auditoría gratuita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="https://ec.linkedin.com/company/corvant-data-protection" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/corvantdataprotection/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="mailto:ventas@corvantdata.com">ventas@corvantdata.com</a></li>
+          <li><a href="https://wa.me/593978675210">+593 978 675 210</a></li>
+          <li>Av. Amazonas y V. R. Roca</li>
+          <li>Ed. Amazonas, piso 7, of. 718</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corvant Data Protection · Quito, Ecuador</p>
+      <p><a href="politica-privacidad.html">Política de Privacidad</a> · <a href="terminos-condiciones.html">Términos</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js"></script>
+<script>
+// Countdown to July 26, 2026 (Quito time)
+(function () {
+  const deadline = new Date('2026-07-26T23:59:59-05:00').getTime();
+  const elDays = document.getElementById('cd-days');
+  const elHours = document.getElementById('cd-hours');
+  const elMin = document.getElementById('cd-min');
+  const elSec = document.getElementById('cd-sec');
+  if (!elDays) return;
+
+  function update() {
+    const now = new Date().getTime();
+    const distance = deadline - now;
+    if (distance < 0) {
+      const grid = document.getElementById('countdown');
+      if (grid) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--orange); font-family: var(--mono); font-size: 0.85rem; padding: 1rem;">PROMOCIÓN FINALIZADA</div>';
+      }
+      return;
+    }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    elDays.textContent = String(days).padStart(2, '0');
+    elHours.textContent = String(hours).padStart(2, '0');
+    elMin.textContent = String(minutes).padStart(2, '0');
+    elSec.textContent = String(seconds).padStart(2, '0');
+  }
+  update();
+  setInterval(update, 1000);
+})();
+</script>
+</body>
+</html>

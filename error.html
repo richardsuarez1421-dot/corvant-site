@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="icon" type="image/png" sizes="64x64" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="shortcut icon" type="image/png" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="apple-touch-icon" href="/Marca_Corvant-15.png.png?v=10">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Error del servidor — Corvant Data Protection</title>
+<meta name="description" content="Algo salió mal en el servidor. Estamos trabajando para resolverlo.">
+<link rel="stylesheet" href="styles.css">
+<style>
+.status-page {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 30% 50%, #2C1810 0%, #1A1109 50%, #0F0905 100%);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.status-page::before {
+  content: "";
+  position: absolute;
+  width: 80vw; height: 80vw;
+  max-width: 900px; max-height: 900px;
+  left: -10%; top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(255, 137, 51, 0.18) 0%, transparent 60%);
+  filter: blur(60px);
+  z-index: 0;
+  animation: glowDrift 12s ease-in-out infinite;
+}
+@keyframes glowDrift {
+  0%, 100% { transform: translate(0, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(8%, -48%) scale(1.05); opacity: 0.85; }
+}
+.status-page::after {
+  content: "¿?";
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  position: absolute;
+  right: -5vw; bottom: -10vw;
+  font-size: clamp(20rem, 38vw, 44rem);
+  color: rgba(255, 137, 51, 0.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.status-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  text-align: center;
+}
+
+.status-code {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.status-code::before {
+  content: "";
+  width: 28px; height: 1px;
+  background: var(--orange);
+}
+
+.status-number {
+  font-family: var(--serif);
+  font-size: clamp(7rem, 22vw, 18rem);
+  font-weight: 800;
+  color: var(--cream);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+}
+.status-number em { color: var(--orange); font-style: italic; font-weight: 400; }
+
+.status-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+  color: var(--cream);
+  line-height: 1.05;
+}
+.status-title em { color: var(--orange); font-style: italic; }
+.status-title .bold { font-weight: 800; }
+
+.status-text {
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: rgba(252, 250, 246, 0.78);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.status-text strong { color: var(--cream); font-weight: 700; }
+
+.status-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.status-page nav.site-nav .nav-brand img.wordmark { height: 28px; width: auto; }
+
+@media (max-width: 540px) {
+  .status-page { padding: 7rem 1rem 3rem; }
+  .status-actions { flex-direction: column; width: 100%; }
+  .status-actions .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo-wordmark-white.png" alt="Corvant Data Protection" class="wordmark">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <span class="btn-magnetic">
+      <a href="auditoria-gratuita.html" class="btn btn-primary nav-cta">
+        Auditoría gratuita
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </span>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="status-page">
+  <div class="status-inner">
+    <div class="status-code">Error 500</div>
+    <div class="status-number">5<em>0</em>0</div>
+    <h1 class="status-title">
+      Algo <em>salió mal.</em>
+    </h1>
+    <p class="status-text">
+      Tuvimos un problema procesando tu solicitud. <strong>Tu información sigue protegida</strong>. Inténtalo de nuevo en unos minutos o escríbenos directamente.
+    </p>
+    <div class="status-actions">
+      <span class="btn-magnetic">
+        <a href="javascript:history.back()" class="btn btn-primary">
+          Volver atrás
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </span>
+      <a href="contacto.html" class="btn btn-outline" style="color: var(--cream); border-color: rgba(252, 250, 246, 0.3);">Contactarnos</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand" style="display: inline-block; margin-bottom: 1.25rem;">
+          <img src="images/logo-wordmark-white.png" alt="Corvant Data Protection" class="wordmark">
+        </a>
+        <p>Implementación real de la LOPDP para clínicas, laboratorios y centros médicos en Ecuador. No documentos: protección.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios-programa-esencial.html">Programa Esencial LOPDP</a></li>
+          <li><a href="servicios-programa-integral-salud.html">Programa Integral Salud</a></li>
+          <li><a href="servicios-dpo-externo.html">DPO Externo Corvant</a></li>
+          <li><a href="auditoria-gratuita.html">Auditoría gratuita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+          <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="mailto:ventas@corvantdata.com">ventas@corvantdata.com</a></li>
+          <li><a href="https://wa.me/593978675210">+593 978 675 210</a></li>
+          <li>Av. Amazonas y V. R. Roca</li>
+          <li>Ed. Amazonas, piso 7, of. 718</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corvant Data Protection · Quito, Ecuador</p>
+      <p><a href="politica-privacidad.html">Política de Privacidad</a> · <a href="terminos-condiciones.html">Términos</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>

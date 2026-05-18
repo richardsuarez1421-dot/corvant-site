@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="icon" type="image/png" sizes="64x64" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="shortcut icon" type="image/png" href="/Marca_Corvant-15.png.png?v=10">
+<link rel="apple-touch-icon" href="/Marca_Corvant-15.png.png?v=10">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros — Corvant Data Protection</title>
+<meta name="description" content="Conoce a Corvant Data Protection: especialistas en protección de datos personales para el sector salud en Ecuador. Misión, visión, equipo y trayectoria.">
+<link rel="stylesheet" href="styles.css">
+<style>
+
+/* Wordmark logo en nav y footer (sobreescribe estilos base) */
+nav.site-nav .nav-brand img.wordmark { width: auto; height: 28px; }
+nav.site-nav .nav-brand .brand-text { display: none; }
+.footer-brand img.wordmark { height: 36px; width: auto; }
+
+.about-hero {
+  background: var(--ink);
+  padding: 8rem 0 3rem;
+}
+.about-hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  max-width: 14ch;
+  margin-top: 1.25rem;
+}
+.about-hero .lead {
+  margin-top: 2rem;
+  max-width: 60ch;
+  font-size: 1.2rem;
+  color: rgba(252,250,246,0.75);
+}
+
+.mission-vision {
+  background: var(--ink);
+  padding: 4rem 0 var(--section-y);
+}
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  border: 1px solid rgba(252,250,246,0.12);
+  padding-top: 4rem;
+}
+.mv-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+}
+.mv-tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  font-weight: 500;
+  padding-top: 0.5rem;
+  min-width: 80px;
+}
+.mv-text h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--cream);
+}
+.mv-text p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(252,250,246,0.75);
+}
+
+.history-section {
+  background: var(--warm-black);
+  color: var(--cream);
+  padding: var(--section-y) 0;
+}
+.history-section h2 { color: var(--cream); }
+.history-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.history-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(252, 250, 246, 0.78);
+  margin-bottom: 1.5rem;
+}
+.milestones {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.milestone {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(252, 250, 246, 0.15);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+.milestone:last-child { border-bottom: none; }
+.milestone-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--orange);
+  line-height: 1; }
+.milestone h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 0.5rem; }
+.milestone p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(252, 250, 246, 0.7);
+}
+
+.team-section {
+  background: var(--ink);
+  padding: var(--section-y) 0;
+}
+.team-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.team-detail-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(252,250,246,0.12);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem;
+}
+.team-detail-card .initials-large {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  background: var(--orange-soft);
+  color: var(--orange-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500; margin-bottom: 2rem;
+}
+.team-detail-card h3 {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--cream); line-height: 1.15;
+}
+.team-detail-card .team-role {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.team-detail-card .bio {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(252,250,246,0.75);
+  margin-bottom: 1.5rem;
+}
+.credentials-list {
+  list-style: none;
+  border: 1px solid rgba(252,250,246,0.12);
+  padding-top: 1.5rem;
+}
+.credentials-list h4 {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(252,250,246,0.75);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.credentials-list li {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(252,250,246,0.75);
+}
+.credentials-list li::before {
+  content: "→";
+  color: var(--orange);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.team-detail-card .linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange-deep);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--orange);
+  transition: opacity 0.2s;
+}
+.team-detail-card .linkedin-link:hover { opacity: 0.7; }
+
+.values-section {
+  background: var(--ink);
+  padding: var(--section-y) 0;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.value-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(252,250,246,0.12);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+}
+.value-card .num {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.value-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+  color: var(--cream); }
+.value-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(252,250,246,0.75);
+}
+
+.stats-numbers-section {
+  background: var(--ink);
+  padding: var(--section-y) 0;
+}
+
+@media (max-width: 968px) {
+  .mv-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .mv-block { grid-template-columns: 1fr; gap: 0.5rem; }
+  .history-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .team-detail-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo-wordmark-white.png" alt="Corvant Data Protection" class="wordmark">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="nosotros.html" class="active">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <span class="btn-magnetic">
+      <a href="auditoria-gratuita.html" class="btn btn-primary nav-cta">
+      Auditoría gratuita
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    </span>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="about-hero">
+  <div class="container">
+    <div class="eyebrow">Nosotros</div>
+    <h1>Una firma <em>especializada.</em> No otra consultora más.</h1>
+    <p class="lead">
+      Corvant Data Protection es una firma ecuatoriana especializada en asesoría, implementación y cumplimiento en materia de protección de datos personales. Trabajamos con un enfoque profesional y estratégico, combinando criterio jurídico, gestión de riesgos y buenas prácticas internacionales.
+    </p>
+  </div>
+</section>
+
+<!-- ============ MISIÓN Y VISIÓN ============ -->
+<section class="mission-vision">
+  <div class="container">
+    <div class="mv-grid">
+      <div class="mv-block">
+        <span class="mv-tag">/ Misión</span>
+        <div class="mv-text">
+          <h2 class="font-serif">Proteger lo más sensible.</h2>
+          <p>
+            Fortalecer la seguridad de la información en el sector salud y tecnológico, brindando a las pequeñas y medianas empresas soluciones de cumplimiento normativo claras, cercanas y confiables, para que sus datos personales estén protegidos y sus procesos sean legalmente sólidos.
+          </p>
+        </div>
+      </div>
+      <div class="mv-block">
+        <span class="mv-tag">/ Visión</span>
+        <div class="mv-text">
+          <h2 class="font-serif">Ser la referencia.</h2>
+          <p>
+            Ser la firma referente en protección de datos en salud y tecnología — un modelo a seguir para nuevos emprendimientos en la misma rama, reconocida por su seguridad, atención rigurosa y la tranquilidad que ofrece a cada cliente sobre el futuro de su información.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORIA + HITOS ============ -->
+<section class="history-section">
+  <div class="container">
+    <div class="eyebrow on-dark">Trayectoria</div>
+    <h2 class="h-1" style="margin-top: 1rem; max-width: 800px;">
+      Una firma joven con criterio. <em>Especializada por convicción.</em>
+    </h2>
+
+    <div class="history-grid">
+      <div class="history-text">
+        <p>
+          Corvant nace para resolver un problema concreto: en Ecuador, la mayoría de PYMES y organizaciones del sector salud manejaban datos personales sin saber que la LOPDP les aplicaba — y, cuando lo descubrían, el mercado les ofrecía únicamente plantillas genéricas o servicios de cumplimiento documental.
+        </p>
+        <p>
+          Decidimos hacer las cosas distinto. <strong style="color: var(--cream);">No vendemos cumplimiento documental: implementamos protección de datos real.</strong> Combinamos criterio jurídico, enfoque técnico, visión operativa y comunicación clara para que cada organización entienda qué debe hacer, por qué debe hacerlo y cómo implementarlo sin improvisar.
+        </p>
+        <p>
+          Hoy somos un equipo pequeño y especializado. La protección de datos no se delega a juniors ni a plantillas: la asume quien firma. Por eso el contacto principal de cada cliente es directo con el especialista.
+        </p>
+      </div>
+
+      <ul class="milestones">
+        <li class="milestone">
+          <div class="milestone-num">01</div>
+          <div>
+            <h3>Certificación especializada</h3>
+            <p>Obtención de formación especializada y certificación en protección de datos personales por la Universidad Andina Simón Bolívar.</p>
+          </div>
+        </li>
+        <li class="milestone">
+          <div class="milestone-num">02</div>
+          <div>
+            <h3>Salud como nicho estratégico</h3>
+            <p>Definición del sector salud como nicho de alto impacto. Foco en clínicas, laboratorios, consultorios y centros médicos.</p>
+          </div>
+        </li>
+        <li class="milestone">
+          <div class="milestone-num">03</div>
+          <div>
+            <h3>Consolidación de la marca</h3>
+            <p>Consolidación de Corvant, sus servicios, metodología propia de auditoría y planes estructurados de implementación de la LOPDP.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUIPO ============ -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header with-aside reveal">
+      <div>
+        <div class="eyebrow">Equipo</div>
+        <h2 class="h-1" style="margin-top: 1rem;">Quien firma <em>también ejecuta.</em></h2>
+      </div>
+      <p class="lead">
+        Detrás de cada plan hay personas con nombre, formación verificable y compromiso directo con cada cliente. La protección de datos es demasiado sensible para delegarse.
+      </p>
+    </div>
+
+    <div class="team-detail-grid">
+      <article class="team-detail-card">
+        <div class="initials-large">FA</div>
+        <h3>Francisco Javier Arévalo Redrobán</h3>
+        <div class="team-role">Fundador · Gerente General</div>
+        <p class="bio">
+          Abogado ecuatoriano especializado en protección de datos personales, cumplimiento normativo y derecho corporativo. Su trabajo se enfoca en ayudar a empresas, especialmente del sector salud, a implementar la LOPDP mediante soluciones legales, técnicas y organizacionales claras, prácticas y orientadas a la gestión de riesgos.
+        </p>
+
+        <div class="credentials-list">
+          <h4>Formación y credenciales</h4>
+          <ul>
+            <li>Abogado por la Universidad Técnica Particular de Loja (UTPL)</li>
+            <li>Certificado como Delegado de Protección de Datos Personales por la Universidad Andina Simón Bolívar (UASB)</li>
+            <li>Formación especializada en protección de datos personales, cumplimiento normativo y derecho corporativo</li>
+            <li>Próximo maestrante en Protección de Datos por la Universidad Internacional de La Rioja (UNIR)</li>
+          </ul>
+        </div>
+
+        <a href="https://ec.linkedin.com/in/francisco-javier-arevalo-redroban-451a6511b" target="_blank" class="linkedin-link">
+          LinkedIn ↗
+        </a>
+      </article>
+
+      <article class="team-detail-card">
+        <div class="initials-large">LM</div>
+        <h3>Luis Felipe Machado Redrobán</h3>
+        <div class="team-role">Cofundador · Socio Estratégico</div>
+        <p class="bio">
+          Cofundador y Socio Estratégico de Corvant Data Protection. Participa en el desarrollo institucional, posicionamiento comercial y crecimiento de la firma, aportando visión estratégica para fortalecer la presencia de Corvant en el mercado ecuatoriano y acercar soluciones de protección de datos personales a empresas que necesitan cumplir con la LOPDP.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALORES ============ -->
+<section class="values-section">
+  <div class="container">
+    <div class="section-header with-aside reveal">
+      <div>
+        <div class="eyebrow">Cómo trabajamos</div>
+        <h2 class="h-1" style="margin-top: 1rem;">Seis principios <em>no negociables.</em></h2>
+      </div>
+      <p class="lead">
+        Lo que nos diferencia de un servicio genérico de cumplimiento. Estos cuatro pilares se aplican en cada cliente, sin excepción.
+      </p>
+    </div>
+
+    <div class="values-grid">
+      <article class="value-card">
+        <div class="num">/ 01</div>
+        <h3>Criterio jurídico</h3>
+        <p>Análisis legal real, no plantillas. Cada documento parte del marco normativo ecuatoriano y se construye sobre cómo tu empresa trata los datos en la vida cotidiana.</p>
+      </article>
+      <article class="value-card">
+        <div class="num">/ 02</div>
+        <h3>Enfoque técnico</h3>
+        <p>Identificamos riesgos reales en accesos, sistemas, canales y flujos. Recomendaciones concretas y aplicables, no teóricas ni genéricas.</p>
+      </article>
+      <article class="value-card">
+        <div class="num">/ 03</div>
+        <h3>Visión operativa</h3>
+        <p>Acompañamos la corrección paso a paso, dentro de la realidad de tu equipo, tus tiempos y tus procesos. Sin pretender que todo cambie de la noche a la mañana.</p>
+      </article>
+      <article class="value-card">
+        <div class="num">/ 04</div>
+        <h3>Comunicación clara</h3>
+        <p>Explicamos qué hay que hacer, por qué, y cómo implementarlo. Sin tecnicismos innecesarios, sin alarmismo, sin lenguaje basado en el miedo a sanciones.</p>
+      </article>
+      <article class="value-card">
+        <div class="num">/ 05</div>
+        <h3>Especialización</h3>
+        <p>Foco en sector salud y tecnológico. No tratamos de servir a todo el mundo. Profundidad antes que amplitud.</p>
+      </article>
+      <article class="value-card">
+        <div class="num">/ 06</div>
+        <h3>Confidencialidad</h3>
+        <p>Trabajamos con la información más sensible de cada organización. Acuerdos de confidencialidad, accesos restringidos y trazabilidad documentada en cada paso.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-numbers-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Trayectoria comprobada</div>
+      <h2 class="h-1" style="margin-top: 1rem;">Lo que <em>hemos hecho.</em></h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-num"><em>+</em>20</div>
+        <div class="stat-label">organizaciones acompañadas en su cumplimiento LOPDP</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50<small>+</small></div>
+        <div class="stat-label">profesionales capacitados en protección de datos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">11</div>
+        <div class="stat-label">incidentes de protección de datos atendidos y resueltos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><em>+</em>20</div>
+        <div class="stat-label">auditorías realizadas con éxito en clínicas y laboratorios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <div>
+      <span class="pill pill-promo" style="margin-bottom: 1.25rem;">Auditoría gratuita</span>
+      <h2 class="font-serif">Conozcámonos.</h2>
+      <p class="cta-banner-sub">
+        La auditoría inicial es gratuita y sin compromiso. En 1 a 2 reuniones evaluamos tu organización y te damos un diagnóstico claro de dónde estás frente a la LOPDP.
+      </p>
+      <div class="cta-banner-actions">
+        <a href="auditoria-gratuita.html" class="btn btn-primary">
+          Solicitar auditoría
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contacto.html" class="btn btn-outline">Otra consulta</a>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand">
+      <img src="images/logo-wordmark-white.png" alt="Corvant Data Protection" class="wordmark">
+    </a>
+        <p>Implementación real de la LOPDP para clínicas, laboratorios y centros médicos en Ecuador. No documentos: protección.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios-programa-esencial.html">Programa Esencial LOPDP</a></li>
+          <li><a href="servicios-programa-integral-salud.html">Programa Integral Salud</a></li>
+          <li><a href="servicios-dpo-externo.html">DPO Externo Corvant</a></li>
+          <li><a href="auditoria-gratuita.html">Auditoría gratuita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="https://ec.linkedin.com/company/corvant-data-protection" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/corvantdataprotection/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="mailto:ventas@corvantdata.com">ventas@corvantdata.com</a></li>
+          <li><a href="https://wa.me/593978675210">+593 978 675 210</a></li>
+          <li>Av. Amazonas y V. R. Roca</li>
+          <li>Ed. Amazonas, piso 7, of. 718</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Corvant Data Protection · Quito, Ecuador</p>
+      <p><a href="politica-privacidad.html">Política de Privacidad</a> · <a href="terminos-condiciones.html">Términos</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
